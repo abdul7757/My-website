@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -76,7 +76,7 @@
                 <li><a href="page8.html">What is URL Spoofing?</a></li>
                 <li><a href="page10.html">How do Hackers Try to Do Ransom?</a></li>
                 <li><a href="page9.HTML">GAME TRIVIA!!!</a></li>
-                <li><a href="page11.html">Feedback Form</a></a></li>
+                <li><a href="page11.html">Feedback Form</a></li>
                 <li><a href="page12.html">Tips and bits </a></li>
                 <li><a href="page13.html">Social Media Sharing </a></li>
                 <li><a href="page14.html">Android Ransomware Awareness</a></li>
@@ -139,7 +139,6 @@
             color: #4CAF50;
         }
     </style>
-</head>
 <body>
 
 <div class="container">
@@ -222,7 +221,6 @@
             color: #673AB7;
         }
     </style>
-</head>
 <body>
 
 <div class="container">
@@ -284,7 +282,7 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
     </style>
-</head>
+
 <body>
 
 <div class="container">
@@ -304,7 +302,6 @@
         <img src="Ransom4.jpg" alt="Prevention and Mitigation">
     </div>
 </div>
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -366,7 +363,6 @@
             color: #03A9F4;
         }
     </style>
-</head>
 <body>
 
 <div class="container">
@@ -443,7 +439,6 @@
             color: #4CAF50;
         }
     </style>
-</head>
 <body>
 
 <div class="container">
@@ -498,7 +493,6 @@
             margin-bottom: 0;
         }
     </style>
-</head>
 <body>
 
 <h1>Protecting Your Android Device from Ransomware</h1>
@@ -574,7 +568,6 @@
             color: #333;
         }
     </style>
-</head>
 <body>
 
 <div class="container">
@@ -669,7 +662,7 @@
             color: #f44336;
         }
     </style>
-</head>
+
 <body>
 
 <h1>Android Ransomware Quiz</h1>
@@ -812,7 +805,7 @@
             color: #333;
         }
     </style>
-</head>
+
 <body>
 
 <div class="container">
@@ -894,7 +887,6 @@
             background-color: #0056b3;
         }
     </style>
-</head>
 <body>
     <div class="container">
         <h1>Android Ransomware Awareness</h1>
@@ -945,7 +937,6 @@
             border-radius: 4px;
         }
     </style>
-</head>
 <body>
     <div class="container">
         <h1>Personalized Tips for Cybersecurity</h1>
@@ -1032,7 +1023,6 @@
             transform: scale(1.1);
         }
     </style>
-</head>
 <body>
     <div class="container">
         <h1>Share Cybersecurity Tips</h1>
@@ -1139,7 +1129,6 @@
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
     </style>
-</head>
 <body>
     <div class="container">
         <h1>Android Ransomware Awareness</h1>
@@ -1290,7 +1279,6 @@
             color: #0056b3;
         }
     </style>
-</head>
 <body>
     <div class="container">
         <h1>Recovery Stories</h1>
