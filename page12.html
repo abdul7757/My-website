@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personalized Tips for Cybersecurity</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #007bff;
+        }
+        p {
+            margin-bottom: 20px;
+        }
+        .tip {
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-left: 4px solid #007bff;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Personalized Tips for Cybersecurity</h1>
+        <p>Here are some personalized tips and recommendations based on your browsing behavior:</p>
+
+        <!-- Placeholder for personalized tips -->
+        <div id="personalizedTips">
+            <div class="tip">
+                <h3>Tip 1: Use Strong Passwords</h3>
+                <p>Ensure your passwords are complex and unique for each account to prevent unauthorized access.</p>
+            </div>
+            <div class="tip">
+                <h3>Tip 2: Enable Two-Factor Authentication (2FA)</h3>
+                <p>Enhance your account security by enabling two-factor authentication wherever possible.</p>
+            </div>
+            <!-- You can add more personalized tips here -->
+        </div>
+    </div>
+
+    <!-- Script to fetch personalized tips from the backend -->
+    <script>
+        // Simulated personalized tips (replace this with actual data retrieval from your backend)
+        var personalizedTips = [
+            { tip: "Tip 3: Keep Software Updated", description: "Regularly update your operating system and software to patch security vulnerabilities." },
+            { tip: "Tip 4: Be Wary of Phishing Emails", description: "Avoid clicking on suspicious links or downloading attachments from unknown senders." }
+            // Add more personalized tips as needed
+        ];
+
+        // Function to display personalized tips
+        function displayPersonalizedTips() {
+            var personalizedTipsContainer = document.getElementById("personalizedTips");
+            personalizedTips.forEach(function(tip) {
+                var tipHtml = "<div class='tip'>" +
+                                "<h3>" + tip.tip + "</h3>" +
+                                "<p>" + tip.description + "</p>" +
+                              "</div>";
+                personalizedTipsContainer.innerHTML += tipHtml;
+            });
+        }
+
+        // Call the function to display personalized tips when the page loads
+        window.onload = displayPersonalizedTips;
+    </script>
+</body>
+</html>
+

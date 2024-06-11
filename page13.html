@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Share Cybersecurity Tips</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #007bff;
+        }
+        .share-buttons {
+            margin-top: 20px;
+        }
+        .share-button {
+            display: inline-block;
+            margin-right: 10px;
+            border-radius: 4px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .share-button img {
+            width: 40px;
+            height: 40px;
+            object-fit: cover;
+        }
+        .share-button:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Share Cybersecurity Tips</h1>
+        <p>Help spread awareness about cybersecurity by sharing valuable tips with your friends and followers!</p>
+
+        <div class="share-buttons">
+            <div class="share-button" onclick="shareOnFacebook()">
+                <img src="facebook-icon.png" alt="Facebook">
+            </div>
+            <div class="share-button" onclick="shareOnTwitter()">
+                <img src="twitter-icon.png" alt="Twitter">
+            </div>
+            <!-- Add more social media buttons as needed -->
+        </div>
+    </div>
+
+    <!-- JavaScript functions for social media sharing -->
+    <script>
+        function shareOnFacebook() {
+            // Replace "YOUR_URL" with the URL you want to share
+            var url = "YOUR_URL";
+            window.open("https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(url), "_blank");
+        }
+
+        function shareOnTwitter() {
+            // Replace "YOUR_URL" with the URL you want to share
+            var url = "YOUR_URL";
+            window.open("https://x.com/intent/post?url=" + encodeURIComponent(url), "_blank");
+        }
+
+        // Add more functions for other social media platforms if needed
+    </script>
+</body>
+</html>

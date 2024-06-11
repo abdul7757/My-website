@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recovery Stories</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #007bff;
+            text-align: center;
+        }
+        .section {
+            margin-bottom: 40px;
+            padding: 20px;
+        }
+        .section-title {
+            border-bottom: 3px solid #007bff;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .stories {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 20px;
+        }
+        .story-card {
+            background-color: #e9f5ff;
+            border-radius: 10px;
+            padding: 20px;
+            width: 45%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .story-card h3 {
+            color: #0056b3;
+        }
+        .story-card p {
+            color: #333;
+        }
+        .story-card .button {
+            display: inline-block;
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        .story-card .button:hover {
+            background-color: #0056b3;
+        }
+        .story-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .story-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 123, 255, 0.15) 0%, rgba(255, 255, 255, 0) 100%);
+            z-index: 0;
+            opacity: 0.5;
+            transition: opacity 0.3s ease;
+        }
+        .story-card:hover::before {
+            opacity: 0.8;
+        }
+        .story-card .content {
+            position: relative;
+            z-index: 1;
+        }
+        .external-link {
+            color: #007bff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .external-link:hover {
+            color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Recovery Stories</h1>
+
+        <!-- Recovery Stories Section -->
+        <div class="section">
+            <h2 class="section-title">Success Stories</h2>
+            <div class="stories">
+                <div class="story-card">
+                    <div class="content">
+                        <h3>Story 1: ABC Corp's Swift Recovery</h3>
+                        <p>ABC Corp faced a severe ransomware attack that encrypted their critical data. Learn how they swiftly recovered using robust backup strategies and professional cybersecurity help. <a href="https://www.csoonline.com/article/3533453/ransomware-attacks-case-studies-and-examples.html" class="external-link" target="_blank">Read full story</a></p>
+                        <a href="https://www.marshmclennan.com/insights/publications/2021/may/surviving-a-ransomware-attack.html" class="button" target="_blank">Read More</a>
+                    </div>
+                </div>
+                <div class="story-card">
+                    <div class="content">
+                        <h3>Story 2: Freelance Designer's Data Rescue</h3>
+                        <p>When a freelance designer's work files were locked by ransomware, they feared losing everything. Discover how regular backups and quick action saved their business. <a href="https://www.bbc.com/news/technology-54427092" class="external-link" target="_blank">Read full story</a></p>
+                        <a href="https://blog.icons8.com/articles/the-best-cybersecurity-practices-for-freelance-designers/" class="button" target="_blank">Read More</a>
+                    </div>
+                </div>
+                <div class="story-card">
+                    <div class="content">
+                        <h3>Story 3: Healthcare Provider's Secure Recovery</h3>
+                        <p>A healthcare provider's patient data was targeted by a ransomware attack. Find out how they protected sensitive information and restored operations without paying the ransom. <a href="https://www.zdnet.com/article/how-this-hospital-recovered-from-a-ransomware-attack-without-paying-the-ransom/" class="external-link" target="_blank">Read full story</a></p>
+                        <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9856685/" class="button" target="_blank">Read More</a>
+                    </div>
+                </div>
+                <div class="story-card">
+                    <div class="content">
+                        <h3>Story 4: Small Business's Fight Back</h3>
+                        <p>A small business's systems were compromised by ransomware. Learn about their recovery journey and the steps they took to fortify their cybersecurity defenses. <a href="https://www.kaspersky.com/blog/small-business-recovery-ransomware/38604/" class="external-link" target="_blank">Read full story</a></p>
+                        <a href="https://www.researchgate.net/publication/380360965_Cybersecurity_Challenges_and_Solutions_for_Small_Businesses" class="button" target="_blank">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

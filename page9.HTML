@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Android Ransomware Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            margin: 0;
+        }
+        .container {
+            margin: 50px auto;
+            width: 80%;
+            max-width: 600px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .question {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        .options button {
+            display: block;
+            margin: 10px auto;
+            padding: 10px;
+            width: 80%;
+            max-width: 400px;
+            font-size: 16px;
+            cursor: pointer;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+        .options button.correct {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .options button.wrong {
+            background-color: #f44336;
+            color: white;
+        }
+        #next {
+            display: none;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        .score {
+            font-size: 18px;
+            margin-top: 20px;
+            color: #333;
+        }
+        .result {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        .pass {
+            color: #4CAF50;
+        }
+        .fail {
+            color: #f44336;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Android Ransomware Quiz</h1>
+
+<div class="container">
+    <div class="question" id="question"></div>
+    <div class="options" id="options"></div>
+    <button id="next" onclick="nextQuestion()">Next Question</button>
+    <div class="score" id="score"></div>
+    <div class="result" id="result"></div>
+</div>
+
+<script>
+    const questions = [
+        { question: "What is Android ransomware?", options: ["A type of malware that encrypts the user's files and demands payment for decryption", "A security feature in Android devices to protect against ransomware attacks", "A type of app that enhances the performance of Android devices", "A feature in Android devices for backing up data automatically"], answer: "A type of malware that encrypts the user's files and demands payment for decryption" },
+        { question: "Which encryption algorithm is commonly used in Android ransomware?", options: ["MD5", "SHA-1", "AES", "RSA"], answer: "AES" },
+        { question: "What is obfuscation in the context of Android ransomware?", options: ["A technique to hide the ransomware's code and make it harder to analyze", "A method for encrypting the victim's files", "A feature in Android devices for securing sensitive data", "A tool for removing ransomware from infected devices"], answer: "A technique to hide the ransomware's code and make it harder to analyze" },
+        { question: "How do attackers distribute Android ransomware?", options: ["Through malicious links, email attachments, or fake apps", "Through official app stores like Google Play", "Through system updates pushed by the device manufacturer", "Through antivirus software"], answer: "Through malicious links, email attachments, or fake apps" },
+        { question: "Which payment method is commonly used by attackers in Android ransomware attacks?", options: ["Credit card", "Bank transfer", "Cryptocurrency", "PayPal"], answer: "Cryptocurrency" },
+        { question: "What is the purpose of dynamic code loading in Android ransomware?", options: ["To download and execute malicious code at runtime", "To encrypt the victim's files", "To hide the ransomware's code from detection", "To decrypt the victim's files"], answer: "To download and execute malicious code at runtime" },
+        { question: "What is the consequence of not paying the ransom in an Android ransomware attack?", options: ["The victim's files will be decrypted for free", "The attacker will release the victim's files without any harm", "The victim's files will remain encrypted and inaccessible", "The attacker will delete the victim's files"], answer: "The victim's files will remain encrypted and inaccessible" },
+        { question: "How can users protect their Android devices from ransomware attacks?", options: ["By installing antivirus software and keeping it up to date", "By disabling security features on their devices", "By downloading apps from third-party app stores", "By sharing personal information with unknown sources"], answer: "By installing antivirus software and keeping it up to date" },
+        { question: "What is a common sign that a device may be infected with ransomware?", options: ["The device's battery drains unusually fast", "The device displays a ransom note demanding payment", "The device automatically updates its software frequently", "The device's screen flickers intermittently"], answer: "The device displays a ransom note demanding payment" },
+        { question: "What is the primary goal of Android ransomware?", options: ["To steal the user's personal information", "To encrypt the user's files and demand a ransom for decryption", "To display unwanted advertisements", "To improve the device's performance"], answer: "To encrypt the user's files and demand a ransom for decryption" },
+        { question: "What should a user do if their Android device is infected with ransomware?", options: ["Pay the ransom immediately", "Disconnect from the internet and seek professional help", "Restart the device in safe mode", "Ignore the ransom note and continue using the device"], answer: "Disconnect from the internet and seek professional help" },
+        { question: "How can users avoid downloading malicious apps that may contain ransomware?", options: ["By downloading apps only from reputable sources like Google Play Store", "By disabling antivirus software", "By installing as many apps as possible to confuse the ransomware", "By never updating their device"], answer: "By downloading apps only from reputable sources like Google Play Store" },
+        { question: "What role does social engineering play in Android ransomware attacks?", options: ["It tricks users into installing the ransomware", "It encrypts the user's files", "It decrypts the user's files after payment", "It improves the device's performance"],answer: "It tricks users into installing the ransomware" },
+        { question: "Why is code signing used in Android ransomware?", options: ["To make the ransomware appear legitimate", "To increase the speed of encryption", "To reduce the size of the ransomware file", "To ensure the ransomware is open-source"], answer: "To make the ransomware appear legitimate" },
+        { question: "What is the purpose of a ransom note in ransomware attacks?", options: ["To provide instructions on how to decrypt the files for free", "To inform the victim that their files have been encrypted and how to pay the ransom", "To apologize for the inconvenience caused", "To offer a reward for detecting the ransomware"], answer: "To inform the victim that their files have been encrypted and how to pay the ransom" },
+        { question: "What is string obfuscation in the context of ransomware?", options: ["Hiding the code that encrypts the files", "Encrypting the strings in the ransomware's code to make it harder to analyze", "Making the user interface more user-friendly", "Encrypting the user's passwords"], answer: "Encrypting the strings in the ransomware's code to make it harder to analyze" },
+        { question: "How can dynamic code loading benefit ransomware?", options: ["By reducing the size of the initial ransomware payload", "By allowing the ransomware to download additional malicious components at runtime", "By making the ransomware open-source", "By improving the performance of the device"], answer: "By allowing the ransomware to download additional malicious components at runtime" },
+        { question: "What is a common feature of ransomware payment instructions?", options: ["Detailed steps on how to purchase cryptocurrency", "Instructions on contacting law enforcement", "Information on how to uninstall the ransomware", "Suggestions for improving device security"], answer: "Detailed steps on how to purchase cryptocurrency" },
+        { question: "What is a potential consequence of paying the ransom in a ransomware attack?", options: ["Guaranteed recovery of all encrypted files", "Increased likelihood of future attacks", "Immediate protection from future ransomware attacks", "Legal immunity from any further attacks"], answer: "Increased likelihood of future attacks" },
+        { question: "Why is RSA encryption used alongside AES in some ransomware attacks?", options: ["To provide a secondary layer of encryption for additional security", "To encrypt the AES encryption key, making it harder to decrypt the files without the RSA key", "To make the ransomware open-source", "To speed up the encryption process"], answer: "To encrypt the AES encryption key, making it harder to decrypt the files without the RSA key" }
+    ];
+
+    let currentQuestionIndex = 0;
+    let score = 0;
+
+    function displayQuestion() {
+        const questionElement = document.getElementById('question');
+        const optionsElement = document.getElementById('options');
+        const scoreElement = document.getElementById('score');
+        const currentQuestion = questions[currentQuestionIndex];
+
+        questionElement.textContent = currentQuestion.question;
+        optionsElement.innerHTML = '';
+        scoreElement.textContent = `Score: ${score}`;
+
+        currentQuestion.options.forEach(option => {
+            const button = document.createElement('button');
+            button.textContent = option;
+            button.onclick = () => checkAnswer(option, button);
+            optionsElement.appendChild(button);
+        });
+    }
+
+    function checkAnswer(selectedOption, button) {
+        const currentQuestion = questions[currentQuestionIndex];
+        if (selectedOption === currentQuestion.answer) {
+            button.classList.add('correct');
+            score++;
+        } else {
+            button.classList.add('wrong');
+            disableOptions();
+        }
+        document.getElementById('next').style.display = 'block';
+    }
+
+    function disableOptions() {
+        const options = document.querySelectorAll('.options button');
+        options.forEach(option => {
+            option.disabled = true;
+        });
+    }
+
+    function nextQuestion() {
+        currentQuestionIndex++;
+        if (currentQuestionIndex < questions.length) {
+            displayQuestion();
+            document.getElementById('next').style.display = 'none';
+        } else {
+            displayResult();
+        }
+    }
+
+    function displayResult() {
+        const resultElement = document.getElementById('result');
+        const containerElement = document.querySelector('.container');
+        resultElement.textContent = `Final Score: ${score} out of ${questions.length}`;
+        if (score > 15) {
+            resultElement.classList.add('pass');
+            resultElement.textContent += ' - Congratulations! You Passed!';
+        } else {
+            resultElement.classList.add('fail');
+            resultElement.textContent += ' - Sorry! You Failed!';
+        }
+        containerElement.removeChild(document.getElementById('score'));
+        document.getElementById('next').style.display = 'none';
+    }
+
+    displayQuestion();
+</script>
+
+</body>
+</html>
