@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -67,6 +67,7 @@
         <img src="Ransom1.jpg" alt="Ransomware Awareness" style="max-width: 100%; height: auto;">
         <nav>
             <ul>
+                <li><a href="gave trivia.html">GAME TRIVIA part Beginner!!!</a></li>
                 <li><a href="page2.html">What is Ransomware on Android?</a></li>
                 <li><a href="page3.html">The Impact of Ransomware</a></li>
                 <li><a href="page4.html">Prevention and Mitigation</a></li>
@@ -75,18 +76,285 @@
                 <li><a href="page7.html">Solutions to Mitigate from Android Ransom?</a></li>
                 <li><a href="page8.html">What is URL Spoofing?</a></li>
                 <li><a href="page10.html">How do Hackers Try to Do Ransom?</a></li>
-                <li><a href="page9.HTML">GAME TRIVIA!!!</a></li>
-                <li><a href="page11.html">Feedback Form</a></li>
                 <li><a href="page12.html">Tips and bits </a></li>
                 <li><a href="page13.html">Social Media Sharing </a></li>
                 <li><a href="page14.html">Android Ransomware Awareness</a></li>
                 <li><a href="page15.html">Recovery Stories</a></li>
+                <li><a href="page9.HTML">GAME TRIVIA Final!!!</a></li>
+                <li><a href="page11.html">Feedback Form</a></a></li>
+
+
             </ul>
         </nav>
     </main>
     <footer>
         <p>&copy; 2024 Android Ransomware Awareness</p>
     </footer>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Android Ransomware Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            margin: 0;
+        }
+        .container {
+            margin: 50px auto;
+            width: 80%;
+            max-width: 600px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .question {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        .options button {
+            display: block;
+            margin: 10px auto;
+            padding: 10px;
+            width: 80%;
+            max-width: 400px;
+            font-size: 16px;
+            cursor: pointer;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+        .options button.correct {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .options button.wrong {
+            background-color: #f44336;
+            color: white;
+        }
+        #next {
+            display: none;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        .score {
+            font-size: 18px;
+            margin-top: 20px;
+            color: #333;
+        }
+        .result {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        .pass {
+            color: #4CAF50;
+        }
+        .fail {
+            color: #f44336;
+        }
+        #user-info {
+            margin-top: 20px;
+        }
+        #user-info input {
+            padding: 10px;
+            font-size: 16px;
+            width: 80%;
+            max-width: 400px;
+            margin-bottom: 20px;
+        }
+        #user-info button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        #result-container {
+            display: none;
+        }
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Android Ransomware Quiz</h1>
+
+<div id="user-info">
+    <input type="text" id="username" placeholder="Enter your name">
+    <button onclick="startQuiz()">Start Quiz</button>
+</div>
+
+<div id="quiz-container" class="container" style="display:none;">
+    <div class="question" id="question"></div>
+    <div class="options" id="options"></div>
+    <button id="next" onclick="nextQuestion()">Next Question</button>
+    <div class="score" id="score"></div>
+    <div class="result" id="result"></div>
+</div>
+
+<div id="result-container" class="container">
+    <h2>Results</h2>
+    <table id="result-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Score</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</div>
+
+<script>
+    const questions = [
+    { question: "What is Android ransomware?", options: ["A type of software designed to enhance device performance.", "A type of malicious software designed to block access to a user's device or data until a ransom is paid.", "A security feature provided by Android to protect user data.", "An app that provides ransom payment services."], answer: "B) A type of malicious software designed to block access to a user's device or data until a ransom is paid." },
+        { question: "How does Android ransomware infect devices?", options: ["Through official app stores like Google Play.", "Via email attachments from known contacts.", "By downloading updates from reputable sources.", "Through various means, including malicious apps downloaded from unofficial app stores, phishing emails, and compromised software."], answer: "D) Through various means, including malicious apps downloaded from unofficial app stores, phishing emails, and compromised software." },
+        { question: "What should you do if your Android device is infected with ransomware?", options: ["Ignore it and continue using your device as usual.", "Immediately pay the ransom to regain access to your device.", "Disconnect it from the internet, restart in safe mode, and use antivirus software to remove the ransomware.", "Contact your device manufacturer for a replacement."], answer: "C) Disconnect it from the internet, restart in safe mode, and use antivirus software to remove the ransomware." },
+        { question: "Can paying the ransom guarantee that access to your device or data will be restored?", options: ["Yes, paying the ransom always guarantees access restoration.", "No, there is no guarantee that paying the ransom will result in access restoration.", "Only if the ransom is paid within 24 hours of infection.", "Paying the ransom restores access but deletes all user data."], answer: "B) No, there is no guarantee that paying the ransom will result in access restoration." },
+        { question: "How can Android users protect themselves from ransomware?", options: ["By downloading apps only from unofficial app stores.", "By avoiding antivirus software.", "By keeping their device's operating system and apps up to date, and using reputable antivirus software.", "By clicking on every link received via email."], answer: "C) By keeping their device's operating system and apps up to date, and using reputable antivirus software." },
+        { question: "What are some famous examples of Android ransomware?", options: ["\"Lockdroid\" and \"WannaLocker\".", "\"Netflix\" and \"Instagram\".", "\"Google Drive\" and \"WhatsApp\".", "\"Google Play Services\" and \"Chrome\"."], answer: "A) \"Lockdroid\" and \"WannaLocker\"." },
+        { question: "Can Android ransomware affect all Android devices?", options: ["No, only devices running older versions of Android are vulnerable.", "Yes, Android ransomware can potentially affect any Android device.", "Only devices with antivirus software installed are at risk.", "No, only rooted Android devices are vulnerable."], answer: "B) Yes, Android ransomware can potentially affect any Android device." },
+        { question: "Is it possible to remove Android ransomware without paying the ransom?", options: ["No, paying the ransom is the only way to remove Android ransomware.", "Yes, it's possible to remove Android ransomware without paying the ransom by using antivirus software.", "Yes, but only if the device is factory reset.", "No, once infected, the device is permanently compromised."], answer: "B) Yes, it's possible to remove  Android ransomware without paying the ransom by using antivirus software." },
+        { question: "What actions should Android users take to recover from a ransomware attack?", options: ["Pay the ransom and continue using the device as usual.", "Contact law enforcement and file a report.", "Disconnect the infected device from the internet, scan with antivirus software, restore from backup, and change passwords for online accounts if necessary.", "Do nothing and hope the ransomware goes away on its own."], answer: "C) Disconnect the infected device from the internet, scan with antivirus software, restore from backup, and change passwords for online accounts if necessary." },
+        { question: "Which of the following is NOT a common sign of an Android device being infected with ransomware?", options: ["Unusual pop-up messages demanding payment.", "Inability to access files or apps.", "Significant improvement in device performance.", "Sudden decrease in device performance."], answer: "C) Significant improvement in device performance." }
+
+    ];
+
+    let currentQuestionIndex = 0;
+    let score = 0;
+    let username = '';
+
+    function startQuiz() {
+        username = document.getElementById('username').value;
+        if (username.trim() === '') {
+            alert('Please enter your name.');
+            return;
+        }
+        document.getElementById('user-info').style.display = 'none';
+        document.getElementById('quiz-container').style.display = 'block';
+        displayQuestion();
+    }
+
+    function displayQuestion() {
+        const questionElement = document.getElementById('question');
+        const optionsElement = document.getElementById('options');
+        const scoreElement = document.getElementById('score');
+        const currentQuestion = questions[currentQuestionIndex];
+
+        questionElement.textContent = currentQuestion.question;
+        optionsElement.innerHTML = '';
+        scoreElement.textContent = `Score: ${score}`;
+
+        currentQuestion.options.forEach(option => {
+            const button = document.createElement('button');
+            button.textContent = option;
+            button.onclick = () => checkAnswer(option, button);
+            optionsElement.appendChild(button);
+        });
+    }
+
+    function checkAnswer(selectedOption, button) {
+        const currentQuestion = questions[currentQuestionIndex];
+        if (selectedOption === currentQuestion.answer) {
+            button.classList.add('correct');
+            score++;
+        } else {
+            button.classList.add('wrong');
+        }
+        disableOptions();
+        document.getElementById('next').style.display = 'block';
+    }
+
+    function disableOptions() {
+        const options = document.querySelectorAll('.options button');
+        options.forEach(option => {
+            option.disabled = true;
+            if (option.textContent === questions[currentQuestionIndex].answer) {
+                option.classList.add('correct');
+            }
+        });
+    }
+
+    function nextQuestion() {
+        currentQuestionIndex++;
+        if (currentQuestionIndex < questions.length) {
+            displayQuestion();
+            document.getElementById('next').style.display = 'none';
+        } else {
+            displayResult();
+        }
+    }
+
+    function displayResult() {
+        const resultElement = document.getElementById('result');
+        const containerElement = document.querySelector('#quiz-container');
+        const resultContainer = document.getElementById('result-container');
+
+        resultElement.textContent = `Final Score: ${score} out of ${questions.length}`;
+        if (score >= 17) {
+            resultElement.classList.add('pass');
+            resultElement.textContent += ' - Congratulations! You Passed!';
+        } else {
+            resultElement.classList.add('fail');
+            resultElement.textContent += ' - Sorry! You Failed!';
+        }
+
+        // Save result to table
+        const resultTableBody = document.querySelector('#result-table tbody');
+        const newRow = document.createElement('tr');
+        const nameCell = document.createElement('td');
+        const scoreCell = document.createElement('td');
+
+        nameCell.textContent = username;
+        scoreCell.textContent = score;
+
+        newRow.appendChild(nameCell);
+        newRow.appendChild(scoreCell);
+        resultTableBody.appendChild(newRow);
+
+        containerElement.style.display = 'none';
+        resultContainer.style.display = 'block';
+    }
+</script>
+
+</body>
+</html>
 
  <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -665,14 +933,152 @@
 
 <body>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Android Ransomware Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            margin: 0;
+        }
+        .container {
+            margin: 50px auto;
+            width: 80%;
+            max-width: 600px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .question {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        .options button {
+            display: block;
+            margin: 10px auto;
+            padding: 10px;
+            width: 80%;
+            max-width: 400px;
+            font-size: 16px;
+            cursor: pointer;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+        .options button.correct {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .options button.wrong {
+            background-color: #f44336;
+            color: white;
+        }
+        #next {
+            display: none;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        .score {
+            font-size: 18px;
+            margin-top: 20px;
+            color: #333;
+        }
+        .result {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        .pass {
+            color: #4CAF50;
+        }
+        .fail {
+            color: #f44336;
+        }
+        #user-info {
+            margin-top: 20px;
+        }
+        #user-info input {
+            padding: 10px;
+            font-size: 16px;
+            width: 80%;
+            max-width: 400px;
+            margin-bottom: 20px;
+        }
+        #user-info button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        #result-container {
+            display: none;
+        }
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+
 <h1>Android Ransomware Quiz</h1>
 
-<div class="container">
+<div id="user-info">
+    <input type="text" id="username" placeholder="Enter your name">
+    <button onclick="startQuiz()">Start Quiz</button>
+</div>
+
+<div id="quiz-container" class="container" style="display:none;">
     <div class="question" id="question"></div>
     <div class="options" id="options"></div>
     <button id="next" onclick="nextQuestion()">Next Question</button>
     <div class="score" id="score"></div>
     <div class="result" id="result"></div>
+</div>
+
+<div id="result-container" class="container">
+    <h2>Results</h2>
+    <table id="result-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Score</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
 </div>
 
 <script>
@@ -689,9 +1095,9 @@
         { question: "What is the primary goal of Android ransomware?", options: ["To steal the user's personal information", "To encrypt the user's files and demand a ransom for decryption", "To display unwanted advertisements", "To improve the device's performance"], answer: "To encrypt the user's files and demand a ransom for decryption" },
         { question: "What should a user do if their Android device is infected with ransomware?", options: ["Pay the ransom immediately", "Disconnect from the internet and seek professional help", "Restart the device in safe mode", "Ignore the ransom note and continue using the device"], answer: "Disconnect from the internet and seek professional help" },
         { question: "How can users avoid downloading malicious apps that may contain ransomware?", options: ["By downloading apps only from reputable sources like Google Play Store", "By disabling antivirus software", "By installing as many apps as possible to confuse the ransomware", "By never updating their device"], answer: "By downloading apps only from reputable sources like Google Play Store" },
-        { question: "What role does social engineering play in Android ransomware attacks?", options: ["It tricks users into installing the ransomware", "It encrypts the user's files", "It decrypts the user's files after payment", "It improves the device's performance"],answer: "It tricks users into installing the ransomware" },
+        { question: "What role does social engineering play in Android ransomware attacks?", options: ["It tricks users into installing the ransomware", "It encrypts the user's files", "It decrypts the user's files after payment", "It improves the device's performance"], answer: "It tricks users into installing the ransomware" },
         { question: "Why is code signing used in Android ransomware?", options: ["To make the ransomware appear legitimate", "To increase the speed of encryption", "To reduce the size of the ransomware file", "To ensure the ransomware is open-source"], answer: "To make the ransomware appear legitimate" },
-        { question: "What is the purpose of a ransom note in ransomware attacks?", options: ["To provide instructions on how to decrypt the files for free", "To inform the victim that their files have been encrypted and how to pay the ransom", "To apologize for the inconvenience caused", "To offer a reward for detecting the ransomware"], answer: "To inform the victim that their files have been encrypted and how to pay the ransom" },
+        { question: "What is the purpose of a ransom note in ransomware attacks?", options: ["To provide instructions on how to decrypt the files for free", "To inform the victim that their files have been encrypted and howto pay the ransom", "To apologize for the inconvenience caused", "To offer a reward for detecting the ransomware"], answer: "To inform the victim that their files have been encrypted and how to pay the ransom" },
         { question: "What is string obfuscation in the context of ransomware?", options: ["Hiding the code that encrypts the files", "Encrypting the strings in the ransomware's code to make it harder to analyze", "Making the user interface more user-friendly", "Encrypting the user's passwords"], answer: "Encrypting the strings in the ransomware's code to make it harder to analyze" },
         { question: "How can dynamic code loading benefit ransomware?", options: ["By reducing the size of the initial ransomware payload", "By allowing the ransomware to download additional malicious components at runtime", "By making the ransomware open-source", "By improving the performance of the device"], answer: "By allowing the ransomware to download additional malicious components at runtime" },
         { question: "What is a common feature of ransomware payment instructions?", options: ["Detailed steps on how to purchase cryptocurrency", "Instructions on contacting law enforcement", "Information on how to uninstall the ransomware", "Suggestions for improving device security"], answer: "Detailed steps on how to purchase cryptocurrency" },
@@ -701,6 +1107,18 @@
 
     let currentQuestionIndex = 0;
     let score = 0;
+    let username = '';
+
+    function startQuiz() {
+        username = document.getElementById('username').value;
+        if (username.trim() === '') {
+            alert('Please enter your name.');
+            return;
+        }
+        document.getElementById('user-info').style.display = 'none';
+        document.getElementById('quiz-container').style.display = 'block';
+        displayQuestion();
+    }
 
     function displayQuestion() {
         const questionElement = document.getElementById('question');
@@ -727,8 +1145,8 @@
             score++;
         } else {
             button.classList.add('wrong');
-            disableOptions();
         }
+        disableOptions();
         document.getElementById('next').style.display = 'block';
     }
 
@@ -736,6 +1154,9 @@
         const options = document.querySelectorAll('.options button');
         options.forEach(option => {
             option.disabled = true;
+            if (option.textContent === questions[currentQuestionIndex].answer) {
+                option.classList.add('correct');
+            }
         });
     }
 
@@ -751,60 +1172,38 @@
 
     function displayResult() {
         const resultElement = document.getElementById('result');
-        const containerElement = document.querySelector('.container');
+        const containerElement = document.querySelector('#quiz-container');
+        const resultContainer = document.getElementById('result-container');
+
         resultElement.textContent = `Final Score: ${score} out of ${questions.length}`;
-        if (score > 15) {
+        if (score >= 17) {
             resultElement.classList.add('pass');
             resultElement.textContent += ' - Congratulations! You Passed!';
         } else {
             resultElement.classList.add('fail');
             resultElement.textContent += ' - Sorry! You Failed!';
         }
-        containerElement.removeChild(document.getElementById('score'));
-        document.getElementById('next').style.display = 'none';
-    }
 
-    displayQuestion();
+        // Save result to table
+        const resultTableBody = document.querySelector('#result-table tbody');
+        const newRow = document.createElement('tr');
+        const nameCell = document.createElement('td');
+        const scoreCell = document.createElement('td');
+
+        nameCell.textContent = username;
+        scoreCell.textContent = score;
+
+        newRow.appendChild(nameCell);
+        newRow.appendChild(scoreCell);
+        resultTableBody.appendChild(newRow);
+
+        containerElement.style.display = 'none';
+        resultContainer.style.display = 'block';
+    }
 </script>
- <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>How do Hackers Try to Do Ransom?</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 20px;
-            background-color: #f5f5f5;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        h1, h2 {
-            color: #333;
-        }
-        p {
-            color: #666;
-            margin-bottom: 20px;
-        }
-        .attack-method {
-            margin-bottom: 20px;
-            padding: 10px;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        .attack-method h3 {
-            color: #009688;
-        }
-        .attack-method p {
-            color: #333;
-        }
-    </style>
+
+</body>
+</html>
 
 <body>
 
@@ -981,7 +1380,10 @@
         window.onload = displayPersonalizedTips;
     </script>
 
-<meta charset="UTF-8">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Share Cybersecurity Tips</title>
     <style>
@@ -1015,14 +1417,17 @@
             transition: transform 0.3s ease;
         }
         .share-button img {
-            width: 40px;
-            height: 40px;
+            width: 60px;
+            height: 60px;
             object-fit: cover;
+            border-radius: 50%;
+            border: 2px solid #007bff;
         }
         .share-button:hover {
             transform: scale(1.1);
         }
     </style>
+</head>
 <body>
     <div class="container">
         <h1>Share Cybersecurity Tips</h1>
@@ -1030,10 +1435,16 @@
 
         <div class="share-buttons">
             <div class="share-button" onclick="shareOnFacebook()">
-                <img src="facebook-icon.png" alt="Facebook">
+                <img src="fb.jpg" alt="Facebook">
             </div>
             <div class="share-button" onclick="shareOnTwitter()">
-                <img src="twitter-icon.png" alt="Twitter">
+                <img src="x.jpg" alt="Twitter">
+            </div>
+            <div class="share-button" onclick="shareOnWhatsApp()">
+                <img src="wa.jpg" alt="WhatsApp">
+            </div>
+            <div class="share-button" onclick="shareOnInstagram()">
+                <img src="ig.jpg" alt="Instagram">
             </div>
             <!-- Add more social media buttons as needed -->
         </div>
@@ -1050,86 +1461,26 @@
         function shareOnTwitter() {
             // Replace "YOUR_URL" with the URL you want to share
             var url = "YOUR_URL";
-            window.open("https://x.com/intent/post?url=" + encodeURIComponent(url), "_blank");
+            window.open("https://twitter.com/intent/tweet?url=" + encodeURIComponent(url), "_blank");
+        }
+
+        function shareOnWhatsApp() {
+            // Replace "YOUR_URL" with the URL you want to share
+            var url = "YOUR_URL";
+            window.open("https://api.whatsapp.com/send?text=" + encodeURIComponent(url), "_blank");
+        }
+
+        function shareOnInstagram() {
+            // Replace "YOUR_URL" with the URL you want to share
+            var url = "YOUR_URL";
+            window.open("https://www.instagram.com/share?url=" + encodeURIComponent(url), "_blank");
         }
 
         // Add more functions for other social media platforms if needed
     </script>
+</body>
+</html>
 
-<meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Android Ransomware Awareness</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #f4f7f6;
-            color: #333;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        h1, h2 {
-            color: #007bff;
-            text-align: center;
-        }
-        .section {
-            margin-bottom: 40px;
-            padding: 20px;
-        }
-        .section-title {
-            border-bottom: 3px solid #007bff;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        .guide, .tools {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            gap: 20px;
-        }
-        .card {
-            background-color: #e9f5ff;
-            border-radius: 10px;
-            padding: 20px;
-            width: 45%;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            text-align: center;
-        }
-        .card h3 {
-            color: #0056b3;
-        }
-        .card p {
-            color: #333;
-        }
-        .card .button {
-            display: inline-block;
-            background-color: #007bff;
-            color: #fff;
-            padding: 10px 20px;
-            border-radius: 4px;
-            text-decoration: none;
-            transition: background-color 0.3s ease;
-        }
-        .card .button:hover {
-            background-color: #0056b3;
-        }
-        .card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        }
-    </style>
-<body>
     <div class="container">
         <h1>Android Ransomware Awareness</h1>
 
