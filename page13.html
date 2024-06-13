@@ -35,9 +35,11 @@
             transition: transform 0.3s ease;
         }
         .share-button img {
-            width: 40px;
-            height: 40px;
+            width: 60px;
+            height: 60px;
             object-fit: cover;
+            border-radius: 50%;
+            border: 2px solid #007bff;
         }
         .share-button:hover {
             transform: scale(1.1);
@@ -51,10 +53,16 @@
 
         <div class="share-buttons">
             <div class="share-button" onclick="shareOnFacebook()">
-                <img src="facebook-icon.png" alt="Facebook">
+                <img src="fb.jpg" alt="Facebook">
             </div>
             <div class="share-button" onclick="shareOnTwitter()">
-                <img src="twitter-icon.png" alt="Twitter">
+                <img src="x.jpg" alt="Twitter">
+            </div>
+            <div class="share-button" onclick="shareOnWhatsApp()">
+                <img src="wa.jpg" alt="WhatsApp">
+            </div>
+            <div class="share-button" onclick="shareOnInstagram()">
+                <img src="ig.jpg" alt="Instagram">
             </div>
             <!-- Add more social media buttons as needed -->
         </div>
@@ -71,10 +79,23 @@
         function shareOnTwitter() {
             // Replace "YOUR_URL" with the URL you want to share
             var url = "YOUR_URL";
-            window.open("https://x.com/intent/post?url=" + encodeURIComponent(url), "_blank");
+            window.open("https://twitter.com/intent/tweet?url=" + encodeURIComponent(url), "_blank");
+        }
+
+        function shareOnWhatsApp() {
+            // Replace "YOUR_URL" with the URL you want to share
+            var url = "YOUR_URL";
+            window.open("https://api.whatsapp.com/send?text=" + encodeURIComponent(url), "_blank");
+        }
+
+        function shareOnInstagram() {
+            // Replace "YOUR_URL" with the URL you want to share
+            var url = "YOUR_URL";
+            window.open("https://www.instagram.com/share?url=" + encodeURIComponent(url), "_blank");
         }
 
         // Add more functions for other social media platforms if needed
     </script>
 </body>
 </html>
+
