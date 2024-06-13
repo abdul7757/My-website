@@ -83,15 +83,7 @@
                 <li><a href="page9.HTML">GAME TRIVIA Final!!!</a></li>
                 <li><a href="page11.html">Feedback Form</a>/li>
 
-            </ul>
-        </nav>
-    </main>
-    <footer>
-        <p>&copy; 2024 Android Ransomware Awareness</p>
-    </footer>
-</body>
-</html>
-
+      
 <html lang="en">
 <head>
     <meta charset="UTF-8">
