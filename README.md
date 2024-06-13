@@ -362,7 +362,7 @@
         <!-- Add your image here -->
         <img src="Ransom3.jpg" alt="Ransomware on Android">
     </div>
-    <p>Ransomware on Android is a type of malicious software specifically designed to target Android mobile devices. Similar to ransomware targeting computers, Android ransomware encrypts the files or locks the device, preventing the user from accessing their data or using their device until a ransom is paid. Here's how Android ransomware typically works:</p>
+    <p>Ransomware on Android is a type of malicious software specifically designed to target Android mobile devicesssss. Similar to ransomware targeting computers, Android ransomware encrypts the files or locks the device, preventing the user from accessing their data or using their device until a ransom is paid. Here's how Android ransomware typically works:</p>
 
     <h2 class="infection">Infection:</h2>
     <p>Android ransomware can infect devices through various means, including malicious apps downloaded from third-party app stores, phishing links, or even legitimate-looking apps that have been compromised.</p>
