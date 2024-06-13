@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -81,7 +81,7 @@
                 <li><a href="page14.html">Android Ransomware Awareness</a></li>
                 <li><a href="page15.html">Recovery Stories</a></li>
                 <li><a href="page9.HTML">GAME TRIVIA Final!!!</a></li>
-                <li><a href="page11.html">Feedback Form</a></a></li>
+                <li><a href="page11.html">Feedback Form</a></li>
 
 
             </ul>
@@ -93,7 +93,6 @@
 </body>
 </html>
 
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -356,57 +355,6 @@
 </body>
 </html>
 
- <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ransomware on Android</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 20px;
-            background-color: #f0f0f0;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        h1, h2, h3 {
-            color: #333;
-        }
-        p {
-            margin-bottom: 20px;
-        }
-        .image-container {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        .infection {
-            color: #FF5722;
-        }
-        .encryption {
-            color: #03A9F4;
-        }
-        .ransom-demand {
-            color: #FFC107;
-        }
-        .threats {
-            color: #673AB7;
-        }
-        .payment {
-            color: #4CAF50;
-        }
-    </style>
 <body>
 
 <div class="container">
