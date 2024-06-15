@@ -113,6 +113,21 @@
         th {
             background-color: #f4f4f4;
         }
+        .form-prompt {
+            background-color: #ffeb3b;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 50px auto;
+            width: 80%;
+            max-width: 600px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            font-size: 18px;
+        }
+        .form-prompt a {
+            color: #d32f2f;
+            text-decoration: none;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -146,9 +161,14 @@
     </table>
 </div>
 
+<div id="form-container" class="form-prompt" style="display: none;">
+    <p>To help us with our research, please fill out the following form with your name and score:</p>
+    <p><a href="https://forms.gle/3PteJS3YfP1x8kRB8" target="_blank">Fill the Form</a></p>
+</div>
+
 <script>
     const questions = [
-    { question: "What is Android ransomware?", options: ["A type of software designed to enhance device performance.", "A type of malicious software designed to block access to a user's device or data until a ransom is paid.", "A security feature provided by Android to protect user data.", "An app that provides ransom payment services."], answer: "A type of malicious software designed to block access to a user's device or data until a ransom is paid." },
+        { question: "What is Android ransomware?", options: ["A type of software designed to enhance device performance.", "A type of malicious software designed to block access to a user's device or data until a ransom is paid.", "A security feature provided by Android to protect user data.", "An app that provides ransom payment services."], answer: "A type of malicious software designed to block access to a user's device or data until a ransom is paid." },
         { question: "How does Android ransomware infect devices?", options: ["Through official app stores like Google Play.", "Via email attachments from known contacts.", "By downloading updates from reputable sources.", "Through various means, including malicious apps downloaded from unofficial app stores, phishing emails, and compromised software."], answer: "Through various means, including malicious apps downloaded from unofficial app stores, phishing emails, and compromised software." },
         { question: "What should you do if your Android device is infected with ransomware?", options: ["Ignore it and continue using your device as usual.", "Immediately pay the ransom to regain access to your device.", "Disconnect it from the internet, restart in safe mode, and use antivirus software to remove the ransomware.", "Contact your device manufacturer for a replacement."], answer: "Disconnect it from the internet, restart in safe mode, and use antivirus software to remove the ransomware." },
         { question: "Can paying the ransom guarantee that access to your device or data will be restored?", options: ["Yes, paying the ransom always guarantees access restoration.", "No, there is no guarantee that paying the ransom will result in access restoration.", "Only if the ransom is paid within 24 hours of infection.", "Paying the ransom restores access but deletes all user data."], answer: "No, there is no guarantee that paying the ransom will result in access restoration." },
@@ -158,7 +178,6 @@
         { question: "Is it possible to remove Android ransomware without paying the ransom?", options: ["No, paying the ransom is the only way to remove Android ransomware.", "Yes, it's possible to remove Android ransomware without paying the ransom by using antivirus software.", "Yes, but only if the device is factory reset.", "No, once infected, the device is permanently compromised."], answer: "Yes, it's possible to remove Android ransomware without paying the ransom by using antivirus software." },
         { question: "What actions should Android users take to recover from a ransomware attack?", options: ["Pay the ransom and continue using the device as usual.", "Contact law enforcement and file a report.", "Disconnect the infected device from the internet, scan with antivirus software, restore from backup, and change passwords for online accounts if necessary.", "Do nothing and hope the ransomware goes away on its own."], answer: "Disconnect the infected device from the internet, scan with antivirus software, restore from backup, and change passwords for online accounts if necessary." },
         { question: "Which of the following is NOT a common sign of an Android device being infected with ransomware?", options: ["Unusual pop-up messages demanding payment.", "Inability to access files or apps.", "Significant improvement in device performance.", "Sudden decrease in device performance."], answer: "Significant improvement in device performance." }
-
     ];
 
     let currentQuestionIndex = 0;
@@ -233,6 +252,7 @@
         const resultElement = document.getElementById('result');
         const containerElement = document.querySelector('#quiz-container');
         const resultContainer = document.getElementById('result-container');
+        const formContainer = document.getElementById('form-container');
 
         resultElement.textContent = `Final Score: ${score} out of ${questions.length}`;
         if (score >= 8) {
@@ -258,13 +278,12 @@
 
         containerElement.style.display = 'none';
         resultContainer.style.display = 'block';
+        formContainer.style.display = 'block';
     }
 </script>
 
 </body>
 </html>
-
-
 
 
 
